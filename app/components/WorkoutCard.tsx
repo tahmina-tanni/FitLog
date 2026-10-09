@@ -1,0 +1,6 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowUpRight, Clock3, Flame, Star } from 'lucide-react';
+import type { Workout } from '@/types/workout';
+export function WorkoutCard({workout}:{workout:Workout}){return <Link href={`/workout/${workout.id}`} className="workout-card"><div className="card-image-wrap">{workout.image?<img className="card-image" src={workout.image} alt={workout.name} loading="lazy" onError={e=>{e.currentTarget.style.display='none';e.currentTarget.parentElement?.classList.add('image-missing')}}/>:<div className="image-fallback"><DumbbellIcon/></div>}<span className="card-arrow"><ArrowUpRight size={18}/></span></div><div className="card-content"><div className="tag-row">{(workout.muscleGroups.length?workout.muscleGroups:['FULL BODY']).slice(0,3).map(tag=><span className="tag" key={tag}>{tag}</span>)}</div><h3>{workout.name}</h3><p className="equipment">{workout.equipment}</p><div className="stats-row"><span><Clock3 size={14}/>{workout.duration} min</span><span><Flame size={14}/>{workout.caloriesBurned} kcal</span><span><Star size={14}/>{workout.rating.toFixed(1)}</span></div></div></Link>}
+function DumbbellIcon(){return <Image src="/assets/logo.png" width={42} height={42} alt="Workout image unavailable"/>}
