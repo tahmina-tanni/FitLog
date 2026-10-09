@@ -49,7 +49,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open  [http://localhost:3002].
 
 To stop the development server, focus the terminal and press `Ctrl+C`.
 
@@ -165,8 +165,8 @@ If Git says a group has no changes, do not create an empty commit. Check `git st
 
 ## Submission
 
-- Live Link: _add the actual Vercel URL after successful deployment_
-- GitHub Repository: _add the actual repository URL_
+- Live Link: https://fit-log-pi-five.vercel.app/my-plan
+- GitHub Repository: https://github.com/tahmina-tanni/FitLog.git
 
 ## Troubleshooting
 
